@@ -1,0 +1,425 @@
+/* format
+------------------------------*/
+
+:root {
+    --interview-main-color: #ffff00;
+    --container-half: calc(50% - 5px);
+    --container-one-third: calc(100% / 3 - 5px);
+    --container-two-thirds: calc(100% / 3 * 2 - 5px);
+}
+
+.ib {
+    display: inline-block;
+}
+
+/* contents
+------------------------------*/
+
+#container {
+    width: 1700px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: var(--interview-main-color);
+    font-feature-settings: "palt";
+    letter-spacing: .1em;
+
+    .mainttl {
+        background-color: #fff;
+        margin-bottom: 10px;
+        padding: 20px 1.5%;
+    }
+
+    .interviewbox {
+
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all .5s;
+
+        &.fade-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
+
+        .mainImage {
+            pointer-events: none;
+            margin-bottom: 10px;
+        }
+
+        .questionFlex {
+            display: flex;
+            align-items: stretch;
+            .questionNumber {
+                flex-shrink: 0;
+                line-height: 1;
+                margin-right: 20px;
+                border-right: 2px solid #000000;
+            }
+        }
+
+        .interviewText {
+            padding: 40px calc(40 / 1920 * 100 * 1vw);
+            background-color: #fff;
+
+            &.yellow {background-color: #ffffc8;}
+
+            .questionContent {
+                color: #000000;
+                font-weight: 700;
+
+                dt {
+                    font-size: 4.2rem;
+                    line-height: 1.4;
+                    margin-bottom: 15px;
+                }
+                dd {
+                    p {
+                        font-size: 2.6rem;
+                        line-height: 1.8;
+                        letter-spacing: .01em;
+                    }
+                }
+            }
+
+        }
+
+        .gridBox {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            .div01 .questionNumber {
+                padding-right: 20px;
+            }
+            .div02 .questionNumber,
+            .div03 .questionNumber {
+                padding-right: 10px;
+            }
+        }
+
+        &#sec01 {
+
+            transform: none;
+            opacity: 1;
+
+            .gridBox {
+                .div01,.gridContainer {
+                    width: var(--container-half);
+                }
+                .div01 {
+                    .questionFlex {
+                        margin-bottom: 30px;
+                    }
+                }
+                .div02 { 
+                    margin-bottom: 10px;
+                }
+            }
+
+        }
+
+        &#sec02 {
+
+            .gridBox {
+                .div01 {
+                    width: var(--container-one-third);
+                }
+                .gridContainer {
+                    width: var(--container-two-thirds);
+                }
+                .div02 {
+                    margin-bottom: 10px;
+                    .questionContent dd {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        p {
+                            width: percentage(591 / 937);
+                        }
+                        figure {
+                            width: percentage(315 / 937);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &#sec03 {
+        
+            .gridBox {
+                .div01 {
+                    width: 100%;
+                }
+                .div02 {
+                    width: var(--container-two-thirds);
+                    .questionContent dd {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        p {
+                            width: percentage(347 / 939);
+                        }
+                        figure {
+                            width: percentage(562 / 939);
+                        }
+                    }
+                }
+                .div03 {
+                    width: var(--container-one-third);
+                }
+            }
+
+        }
+
+        &#sec04 {
+        
+            .gridBox {
+                .gridContainer {
+                    width: var(--container-two-thirds);
+                }
+                .div01 {
+                    margin-bottom: 10px;
+                }
+                .div02 {
+                    .questionContentFlex {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .questionContent {
+                            width: percentage(533 / 934);
+                        }
+                        figure {
+                            width: percentage(370 / 934);
+                        }
+                    }
+                }
+                .div03 {
+                    width: var(--container-one-third);
+                }
+            }
+
+        }
+
+        &#sec05 {
+            .gridBox {
+                .gridContainer {
+                    width: var(--container-half);
+                    .div01 {
+                        margin-bottom: 10px;
+                    }
+                }
+                .div02 { width: var(--container-half); }
+                .div03.spShow {
+                    display: none;
+                }
+            }
+        }
+
+        &#data {
+            .gridBox {
+                .gridContainer {
+                    width: var(--container-two-thirds);
+                }
+                .interviewText {
+                    background-color: #e6e6e6;
+                    .questionContent {
+                        padding-left: 15px;
+                        border-left: 2px solid #000000;
+                    }
+                    &.div01 {
+                        margin-bottom: 10px;
+                        .questionFlex {
+                            justify-content: space-between;
+                            .container-text {
+                                width: percentage(520 / 1030);
+                                h2 {
+                                    margin-bottom: 30px;
+                                }
+                            }
+                            .container-graph {
+                                width: percentage(480 / 1030);
+                            }
+                        }
+                    }
+                    &.div02 {
+                        background-color: var(--interview-main-color);
+                        padding: 0;
+                    }
+                    &.div03 {
+                        width: var(--container-one-third);
+                        .questionContent {
+                            margin-bottom: 70px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .acButton {
+        display: none;
+        pointer-events: none;
+    }
+
+}
+
+@media screen and (max-width:1400px) {
+    :root {
+        --container-half: 100%;
+        --container-one-third: 100%;
+        --container-two-thirds: 100%;
+    }
+    #container {
+        .interviewbox {
+            .gridBox {
+                display: block;
+                .interviewText {
+                    padding: 40px 5%;
+                    &:not(:last-of-type) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            .questionFlex .questionNumber {
+                max-width: 17%;
+            }
+            &#sec04 .gridBox .gridContainer {
+                margin-bottom: 10px;
+            }
+            &#sec05 .gridBox .div03 {
+                &.pcShow {
+                    display: none;
+                }
+                &.spShow {
+                    display: block;
+                }
+            }
+            &#data .gridBox .gridContainer {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #container {
+        .mainttl {
+            padding: 1.5%;
+        }
+        .interviewbox {
+            .mainImage {
+                pointer-events: all;
+                position: relative;
+                padding-bottom: 50px;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 35px;
+                    height: 19px;
+                    background-image: url(../image/acButton_arrow.png);
+                    background-repeat: no-repeat;
+                    transition: all .3s;
+                    bottom: 25px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(75%);
+                }
+                &.move::after {
+                    transform: translateX(-50%) translateY(75%) rotate(180deg);
+                }
+            }
+            .gridBox {
+                display: none;
+                .interviewText .questionNumber {
+                    padding-right: 15px;
+                    margin-right: 15px;
+                }
+            }
+            .interviewText {
+                .questionContent {
+                    dt {
+                        font-size: 2.0rem;
+                    }
+                    dd p {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+            
+            &#data {
+                .gridBox {
+                    display: block;
+                }
+            }
+
+            &#sec01 .gridBox .div01 .questionFlex {
+                margin-bottom: 20px;
+            }
+
+            &#sec02 .gridBox .div02 .questionFlex {
+                margin-bottom: 20px;
+                .questionContent dd p {
+                    width: auto;
+                }
+            }
+
+            &#sec03 .gridBox .div02 .questionFlex {
+                margin-bottom: 20px;
+                .questionContent dd p {
+                    width: auto;
+                }
+            }
+
+            &#sec04 .gridBox .div02 .questionFlex {
+                margin-bottom: 20px;
+                .questionContent {
+                    width: auto;
+                }
+            }
+
+            &#data .gridBox .interviewText {
+                &.div01 .questionFlex {
+                    display: block;
+                    .container-text {
+                        width: auto;
+                        margin-bottom: 30px;
+                        h2 {
+                            max-width: 80%;
+                        }
+                    }
+                    .container-graph {
+                        width: 80%;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                }
+                &.div03 {
+                    .questionContent {
+                        margin-bottom: 30px;
+                    }
+                    .questionGraph {
+                        width: 80%;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+//要素の高さが足りなくて背景が見えてしまうの対策
+:not(:root) .gridContainer{
+    overflow: hidden;
+    .interviewText{
+        &:not(:first-of-type):last-of-type{
+            height: 100%;
+        }
+    }
+}

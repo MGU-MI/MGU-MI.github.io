@@ -458,12 +458,18 @@
   }
 
   .leadText {
-    margin: 0 auto 70px;
+    margin: 0 auto 40px;
     font-size: 2.4rem;
   }
 
   .sec01 {
     padding-bottom: 80px;
+		padding-top: 40px;
+  }
+	
+	.sec01::after {
+  position: absolute;
+  	height: 100%;
   }
 
   .sec01Flex {

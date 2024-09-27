@@ -385,6 +385,11 @@ body {
 /*-------------------------------------------------------------------
 	wrap
 -------------------------------------------------------------------*/
+
+#wrap {
+  padding-top: 80px;
+}
+
 /*-------------------------------------------------------------------
 	header
 -------------------------------------------------------------------*/
@@ -394,7 +399,6 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
-  display: none;
   background: rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
   padding: 10px 5%;
@@ -410,9 +414,6 @@ body {
 /*-------------------------------------------------------------------
 	container
 -------------------------------------------------------------------*/
-#container {
-  padding: 150px 0 50px;
-}
 
 .alignLeft {
   text-align: left;
@@ -439,8 +440,8 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  #container {
-    padding: 50px 0 20px;
+  #wrap {
+    padding-top: 60px;
   }
 }
 /* footer
@@ -449,7 +450,6 @@ body {
   padding: 75px 0;
   text-align: center;
   line-height: 1.0;
-  background: #fffdcb;
   font-size: 1.2rem;
 }
 
@@ -525,5 +525,23 @@ html {
 
   .spBl {
     display: block;
+  }
+}
+
+.back_btn{
+  width: fit-content;
+  display: block;
+  margin-inline: auto;
+  margin-top: 100px;
+  transition: .3s;
+}
+.back_btn:hover{
+  opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+	.back_btn{
+    max-width: 290px;
+    margin-top: 50px;
   }
 }
