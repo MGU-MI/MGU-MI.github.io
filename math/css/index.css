@@ -238,7 +238,7 @@
   padding-left: 25px;
   margin-bottom: 50px;
 }
-.pencilTitle ::before {
+.pencilTitle span::before {
   background: url("../image/pencil_icon.png") left top no-repeat;
   width: 36px;
   height: 67px;
@@ -253,6 +253,9 @@
   font-size: 3.6rem;
   border-bottom: 3px solid #2cbebe;
   padding-left: 15px;
+}
+.pencilTitle span small {
+  font-size: calc(28 / 36 * 1em);
 }
 
 /* acordion */
@@ -321,6 +324,15 @@
 .faqFlex .faqIcon {
   flex-shrink: 0;
   margin-right: 30px;
+}
+.faqFlex dd a {
+  color: #2cbebe;
+  text-decoration: underline;
+}
+@media screen and (min-width:769px) {
+  .faqFlex dd a:hover {
+    text-decoration: none;
+  }
 }
 
 /* slick */
@@ -643,7 +655,7 @@
   .pencilTitle {
     margin-bottom: 30px;
   }
-  .pencilTitle ::before {
+  .pencilTitle span::before {
     width: 18px;
     height: 34px;
     background-size: cover;
@@ -654,8 +666,11 @@
   }
   .pencilTitle span {
     font-size: 2.4rem;
+    line-height: 1.2;
+    display: inline-block;
     border-bottom: 2px solid #2cbebe;
     padding-left: 10px;
+    padding-bottom: 5px;
   }
 
   .maxH {

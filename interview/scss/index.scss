@@ -19,22 +19,77 @@
     width: 1700px;
     max-width: 90%;
     margin: 0 auto;
-    padding: 10px;
-    background-color: var(--interview-main-color);
     font-feature-settings: "palt";
     letter-spacing: .1em;
 
     .mainttl {
-        background-color: #fff;
-        margin-bottom: 10px;
-        padding: 20px 1.5%;
+        margin-bottom: 60px;
+    }
+
+    .tab-menu {
+        display: flex;
+        justify-content: space-between;
+        li {
+            position: relative;
+            width: percentage(840 / 1700);
+            margin: 3px;
+            cursor: pointer;
+            pointer-events: all;
+            span {
+                font-size: 3.5rem;
+                color: #4d4d4d;
+                font-weight: 700;
+                line-height: 1;
+                text-align: center;
+                display: block;
+                position: relative;
+                padding-block: 30px;
+                background: #fff;
+                z-index: 2;
+                clip-path: polygon(18px 0,100% 0,100% 100%,0 100%,0 18px);
+                transition: all .3s;
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: 50%;
+                width: calc(100% + 6px);
+                height: calc(100% + 6px);
+                transform: translate(-50%,-50%);
+                background: #4d4d4d;
+                clip-path: polygon(20px 0,100% 0,100% 100%,0 100%,0 20px);
+            }
+            &.active {
+                span {
+                    background: var(--interview-main-color);
+                }
+            }
+            @media screen and (min-width:769px) {
+                &:hover span {
+                    background: var(--interview-main-color);
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        padding: 60px percentage(50 / 1700);
+        background: #ffffc8;
+        .tab-pane {
+            display: none;
+            background: var(--interview-main-color);
+            &.active {
+                display: block;
+            }
+        }
     }
 
     .interviewbox {
 
         opacity: 0;
         transform: translateY(50px);
-        transition: all .5s;
+        transition: all .3s;
 
         &.fade-in {
             opacity: 1;
@@ -78,8 +133,8 @@
                 }
                 dd {
                     p {
-                        font-size: 2.6rem;
-                        line-height: 1.8;
+                        font-size: 2.4rem;
+                        line-height: calc(44 / 24);
                         letter-spacing: .01em;
                     }
                 }
@@ -259,6 +314,137 @@
             }
         }
 
+        &#sec06 {
+
+            transform: none;
+            opacity: 1;
+
+            .gridBox {
+                .div03,.gridContainer {
+                    width: var(--container-half);
+                }
+                .div03 {
+                    .questionFlex {
+                        margin-bottom: 30px;
+                    }
+                }
+                .div02 { 
+                    margin-top: 10px;
+                }
+            }
+
+        }
+
+        &#sec07 {
+            .gridBox {
+                .div01,.gridContainer {
+                    width: 100%;
+                }
+                .gridContainer {
+                    display: flex;
+                    gap: 10px;
+                    .div02 {
+                        display: flex;
+                        justify-content: space-between;
+                        width: percentage(948 / 1600);
+                        .questionFlex {
+                            width: percentage(477 / 860);
+                        }
+                        figure {
+                            width: percentage(350 / 860);
+                        }
+                    }
+                    .div03 {
+                        width: percentage(645 / 1600);
+                    }
+                }
+            }
+        }
+
+        &#sec08 {
+            .gridBox {
+                .div01 {
+                    width: calc(46.25% - 5px);
+                    .questionFlex {
+                        margin-bottom: 30px;
+                    }
+                }
+                .gridContainer {
+                    width: calc(100% - 46.25% - 5px);
+                    .div03 {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+
+        &#sec09 {
+            .gridBox {
+                .div01 {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    .questionFlex {
+                        width: percentage(840 / 1520);
+                    }
+                    figure {
+                        width: percentage(650 / 1520);
+                    }
+                }
+                .gridContainer {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 10px;
+                    .div02,.div03 {
+                        width: var(--container-half);
+                    }
+                }
+            }
+        }
+
+        &#sec10 {
+            .gridBox .flex {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                .gridContainer {
+                    width: var(--container-half);
+                    .div03 {
+                        margin-top: 10px;
+                    }
+                }
+                .div02 {
+                    width: var(--container-half);
+                }
+            }
+        }
+
+        &#sec11 {
+            .gridBox {
+                .div01 {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    .questionFlex {
+                        width: percentage(840 / 1520);
+                    }
+                    figure {
+                        width: percentage(650 / 1520);
+                    }
+                }
+                .gridContainer {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 10px;
+                    .div02,.div03 {
+                        width: var(--container-half);
+                    }
+                }
+            }
+        }
+
     }
 
     .acButton {
@@ -266,6 +452,10 @@
         pointer-events: none;
     }
 
+}
+
+#container #tab2025 #data.interviewbox .gridBox {
+    flex-direction: row-reverse;
 }
 
 @media screen and (max-width:1400px) {
@@ -302,6 +492,38 @@
             &#data .gridBox .gridContainer {
                 margin-bottom: 10px;
             }
+            &#sec06 .gridBox .gridContainer {
+                margin-bottom: 10px;
+            }
+            &#sec07 .gridBox .gridContainer {
+                flex-wrap: wrap;
+                gap: 0;
+                .div02,.div03 {
+                    width: 100%;
+                }
+            }
+            &#sec08 .gridBox {
+                .div01,.gridContainer {
+                    width: 100%;
+                }
+            }
+            &#sec10 {
+                .gridBox .flex {
+                    gap: 0;
+                    .gridContainer {
+                        display: contents;
+                        .div01 {
+                            order: 1;
+                        }
+                        .div03 {
+                            order: 3;
+                        }
+                    }
+                    .div02 {
+                        order: 2;
+                    }
+                }
+            }
         }
     }
 }
@@ -309,7 +531,17 @@
 @media screen and (max-width:768px) {
     #container {
         .mainttl {
-            padding: 1.5%;
+            margin-bottom: 40px;
+        }
+        .tab-menu li {
+            width: 48%;
+            span {
+                font-size: 2.8rem;
+                padding-block: 20px;
+            }
+        }
+        .tab-content {
+            padding: 40px percentage(40 / 670);
         }
         .interviewbox {
             .mainImage {
@@ -320,7 +552,7 @@
                     position: absolute;
                     content: '';
                     width: 35px;
-                    height: 19px;
+                    aspect-ratio: 35 / 19;
                     background-image: url(../image/acButton_arrow.png);
                     background-repeat: no-repeat;
                     transition: all .3s;
@@ -409,10 +641,51 @@
                 }
             }
 
+            &#sec07 .gridBox .gridContainer .div02 {
+                flex-wrap: wrap;
+                row-gap: 25px;
+                .questionFlex,figure {
+                    width: 100%;
+                }
+            }
+
+            &#sec09 .gridBox .div01 {
+                flex-wrap: wrap;
+                row-gap: 25px;
+                .questionFlex,figure {
+                    width: 100%;
+                }
+            }
+
+            &#sec11 .gridBox .div01 {
+                flex-wrap: wrap;
+                row-gap: 25px;
+                .questionFlex,figure {
+                    width: 100%;
+                }
+            }
+
         }
     }
 }
 
+@media screen and (max-width:640px) {
+    #container {
+        .mainttl {
+            margin-bottom: 20px;
+        }
+        .tab-menu li {
+            width: 47%;
+            span {
+                font-size: 1.8rem;
+                padding-block: 15px;
+            }
+        }
+        .tab-content {
+            padding: 20px percentage(20 / 670);
+        }
+    }
+}
 
 //要素の高さが足りなくて背景が見えてしまうの対策
 :not(:root) .gridContainer{
