@@ -1186,6 +1186,13 @@ a:hover .c-modal__link__picture img {
 	display: none;
 }
 
+.p-course__right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: calc(640 / 1920 * 100vw);
+}
+
 @media screen and (max-width: 767px) {
 	
 	.newLink {
@@ -1309,7 +1316,6 @@ a:hover .c-modal__link__picture img {
 	background-size: 100%;
 	background-repeat: no-repeat;
 	aspect-ratio: 3 / 2;
-	background-color: #707070;
 }
 
 .p-fv__left {
@@ -1374,8 +1380,9 @@ a:hover .c-modal__link__picture img {
 	.rollOver {
 		padding-left: 0;
 	}
-	
-	
+	.rollOver::before {
+		left: 0;
+	}
 }
 
 .p-fv__left__wrap a:hover img {
@@ -1418,7 +1425,6 @@ a:hover .c-modal__link__picture img {
 	
 	.p-fv__left__text {
 		padding-left: 0;
-		margin-top: 0;
 	}
 }
 	
@@ -1432,7 +1438,7 @@ a:hover .c-modal__link__picture img {
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	color: #e50012;
-    bottom: -1%;
+    bottom: -1.2%;
     left: 16.66666667vw;
 	padding: 0.80625vw 0.3125vw 0 1.9270833333vw;
 	position: absolute;
@@ -2317,6 +2323,10 @@ a {
 	.p-course {
 		padding-top: 40vw;
 	}
+
+	.p-course__right {
+		display: none;
+	}
 	
 	.newLink .c-btn {
 		height: 62.5vw;
@@ -2366,6 +2376,7 @@ a {
 	    -ms-flex-direction: column-reverse;
 	        flex-direction: column-reverse;
 	background-image: url(../../assets/images/bg_fv_sp.jpg);
+	background-size: cover;
 	padding-bottom: 3.2vw;
 }
 
@@ -2374,6 +2385,7 @@ a {
 	position: relative;
 }
 
+/*
 .p-fv__left::before {
 	position: absolute;
 	content: "";
@@ -2383,14 +2395,14 @@ a {
 	top: 0;
 	left: 0;
 }
+*/
 
 .p-fv__right {
 	width: 100%;
 }
 
 .p-fv__left__picture {
-	width: 66.6666666667vw;
-	margin-left: auto;
+	width: 100%;
 }
 
 .p-fv__right__picture {
